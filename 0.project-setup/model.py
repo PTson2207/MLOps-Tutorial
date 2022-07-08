@@ -1,9 +1,10 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import pytorch_lightning as pl
+import torch.nn.functional as F
 from transformers import AutoModel
 from sklearn.metrics import accuracy_score
+
 
 class ColaModel(pl.LightningModule):
     def __init__(self, model_name="google/bert_uncased_L-2_H-128_A-2", lr=1e-2):
@@ -36,6 +37,5 @@ class ColaModel(pl.LightningModule):
         self.log("val_loss", loss, prog_bar=True)
         self.log("val_acc", val_acc, prog_bar=True)
 
-    def configure_optimizer(self):
+    def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=self.hparams["lr"])
-    
