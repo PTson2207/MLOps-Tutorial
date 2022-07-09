@@ -28,6 +28,5 @@ class ColaPredictor:
 
 if __name__ == "__main__":
     sentence = "The boy is sitting on a bench"
-    sentence = sentence.encode("utf-8")
     predictor = ColaModel("./models/epoch=0-step=267.ckpt")
     print(predictor.predict(sentence))
