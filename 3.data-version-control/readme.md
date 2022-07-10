@@ -14,7 +14,7 @@
 - là một loại phần mềm quản lý phiên bản dữ liệu, quy trình làm việc và thử nghiệm mới, được xây dựng dựa trên Git.
 
 * Sử dụng Git và DVC, nhóm khoa học dữ liệu và máy học có thể:
-- Version experiments(thử nghiệm phiên bản)
-- Manage large datasets(quản lý bộ dữ liệu lớn)
-- Make projects reproducible(làm cho các dự án có thể tái sản xuất.)
+    - Version experiments(thử nghiệm phiên bản)
+    - Manage large datasets(quản lý bộ dữ liệu lớn)
+    - Make projects reproducible(làm cho các dự án có thể tái sản xuất.)
 <img src="https://www.ravirajag.dev/_next/image?url=%2Fstatic%2Fimages%2Fdvc%2Fdvc_1.png&w=3840&q=75">
