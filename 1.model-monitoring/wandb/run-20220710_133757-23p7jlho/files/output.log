@@ -1,0 +1,48 @@
+
+Validation sanity check:  50%|#####     | 1/2 [00:01<00:01,  1.12s/it]
+  | Name                   | Type                          | Params
+-------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M
+1 | train_accuracy_metric  | Accuracy                      | 0
+2 | val_accuracy_metric    | Accuracy                      | 0
+3 | f1_metric              | F1                            | 0
+4 | precision_macro_metric | Precision                     | 0
+5 | recall_macro_metric    | Recall                        | 0
+6 | precision_micro_metric | Precision                     | 0
+7 | recall_micro_metric    | Recall                        | 0
+-------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\utilities\distributed.py:68: UserWarning: Your val_dataloader has `shuffle=True`, it is best practice to turn this off for validation and test dataloaders.
+
+Validation sanity check: 100%|##########| 2/2 [00:02<00:00,  1.09s/it]
+Traceback (most recent call last):
+  File "D:\MLOps-tutorial\1.model-monitoring\train.py", line 71, in <module>
+    main()
+  File "D:\MLOps-tutorial\1.model-monitoring\train.py", line 68, in main
+    trainer.fit(cola_model, cola_data)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 499, in fit
+    self.dispatch()
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 546, in dispatch
+    self.accelerator.start_training(self)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\accelerators\accelerator.py", line 73, in start_training
+    self.training_type_plugin.start_training(trainer)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\plugins\training_type\training_type_plugin.py", line 114, in start_training
+    self._results = trainer.run_train()
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 607, in run_train
+    self.run_sanity_check(self.lightning_module)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 864, in run_sanity_check
+    _, eval_results = self.run_evaluation(max_batches=self.num_sanity_val_batches)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 752, in run_evaluation
+    self.evaluation_loop.on_evaluation_end()
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\evaluation_loop.py", line 100, in on_evaluation_end
+    self.trainer.call_hook('on_validation_end', *args, **kwargs)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1095, in call_hook
+    trainer_hook(*args, **kwargs)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\callback_hook.py", line 185, in on_validation_end
+    callback.on_validation_end(self, self.lightning_module)
+  File "D:\MLOps-tutorial\1.model-monitoring\train.py", line 22, in on_validation_end
+    sentences = val_batch["sentence"]
+KeyError: 'sentence'
