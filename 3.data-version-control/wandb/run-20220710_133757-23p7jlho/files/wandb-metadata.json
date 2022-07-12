@@ -1,0 +1,22 @@
+{
+    "os": "Windows-10-10.0.22000-SP0",
+    "python": "3.9.12",
+    "heartbeatAt": "2022-07-10T06:38:00.155658",
+    "startedAt": "2022-07-10T06:37:57.838723",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "D:\\MLOps-tutorial\\1.model-monitoring\\train.py",
+    "codePath": "1.model-monitoring\\train.py",
+    "git": {
+        "remote": "https://github.com/PTson2207/MLOps-Tutorial.git",
+        "commit": "79af1ee4d0d9bb5c7d2ea84965ac3d4835174749"
+    },
+    "email": "sonphukl@gmail.com",
+    "root": "D:/MLOps-tutorial",
+    "host": "PTSon",
+    "username": "Admin",
+    "executable": "D:\\Programs\\Anaconda\\python.exe"
+}

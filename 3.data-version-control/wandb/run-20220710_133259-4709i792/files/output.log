@@ -1,0 +1,49 @@
+
+Validation sanity check:   0%|          | 0/2 [00:00<?, ?it/s]
+  | Name                   | Type                          | Params
+-------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M
+1 | train_accuracy_metric  | Accuracy                      | 0
+2 | val_arrcuracy_metric   | Accuracy                      | 0
+3 | f1_metric              | F1                            | 0
+4 | precision_macro_metric | Precision                     | 0
+5 | recall_macro_metric    | Recall                        | 0
+6 | precision_micro_metric | Precision                     | 0
+7 | recall_micro_metric    | Recall                        | 0
+-------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\utilities\distributed.py:68: UserWarning: Your val_dataloader has `shuffle=True`, it is best practice to turn this off for validation and test dataloaders.
+  warnings.warn(*args, **kwargs)
+Traceback (most recent call last):
+  File "D:\MLOps-tutorial\1.model-monitoring\train.py", line 71, in <module>
+    main()
+  File "D:\MLOps-tutorial\1.model-monitoring\train.py", line 68, in main
+    trainer.fit(cola_model, cola_data)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 499, in fit
+    self.dispatch()
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 546, in dispatch
+    self.accelerator.start_training(self)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\accelerators\accelerator.py", line 73, in start_training
+    self.training_type_plugin.start_training(trainer)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\plugins\training_type\training_type_plugin.py", line 114, in start_training
+    self._results = trainer.run_train()
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 607, in run_train
+    self.run_sanity_check(self.lightning_module)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 864, in run_sanity_check
+    _, eval_results = self.run_evaluation(max_batches=self.num_sanity_val_batches)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\trainer.py", line 726, in run_evaluation
+    output = self.evaluation_loop.evaluation_step(batch, batch_idx, dataloader_idx)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\trainer\evaluation_loop.py", line 166, in evaluation_step
+    output = self.trainer.accelerator.validation_step(args)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\accelerators\accelerator.py", line 177, in validation_step
+    return self.training_type_plugin.validation_step(*args)
+  File "D:\Programs\Anaconda\lib\site-packages\pytorch_lightning\plugins\training_type\training_type_plugin.py", line 131, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+  File "D:\MLOps-tutorial\1.model-monitoring\model.py", line 64, in validation_step
+    valid_acc = self.val_accuracy_metric(preds, labels)
+  File "D:\Programs\Anaconda\lib\site-packages\torch\nn\modules\module.py", line 1207, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'ColaModel' object has no attribute 'val_accuracy_metric'
