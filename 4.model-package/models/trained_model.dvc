@@ -1,0 +1,5 @@
+wdir: models
+outs:
+- md5: b0d899737f5bad30c3fd5cc32795a04b
+  size: 52554239
+  path: epoch=0-step=267-v1.ckpt
