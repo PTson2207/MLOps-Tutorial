@@ -28,3 +28,8 @@
     <span class="">ports</span><span class="text-code-white">:</span>
       <span class="text-code-white">-</span> <span class="text-code-green">'8000:8000'</span>
 </code></pre>
+
+* Run FastAPI:
+  - uvicorn app:app --port 8000 --reload
+  - http://localhost:8000/docs sẽ trông như thế này:
+  <img src="https://www.ravirajag.dev/_next/image?url=%2Fstatic%2Fimages%2Fdocker%2Ffastapi_2.png&w=3840&q=75">
